@@ -3,13 +3,9 @@
   "dockerFile": "Dockerfile",
 
   // Forward ports so you can access Flutter Web servers from host
-  "forwardPorts": [8080, 5000],
+  "forwardPorts": [8080],
 
-  // Environment variables
-  "containerEnv": {
-    "CHROME_EXECUTABLE": "/usr/bin/google-chrome",
-    "FLUTTER_WEB_ALLOW_EXTERNAL_ADAPTER": "1"
-  },
+
 
   // Mount your host folder into the container
   "workspaceFolder": "/workspace",
