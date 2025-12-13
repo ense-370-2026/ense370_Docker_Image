@@ -26,6 +26,24 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs && \
     rm -rf /var/lib/apt/lists/*
 
+<<<<<<< HEAD
+=======
+# --- Install Flutter ---
+RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter -b stable
+ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PATH}"
+
+RUN flutter --version
+RUN flutter precache --web
+RUN flutter config --enable-web
+
+# Set default Flutter web port & hostname
+ENV FLUTTER_WEB_PORT=8080
+ENV FLUTTER_WEB_HOSTNAME=0.0.0.0
+
+# Expose typical Flutter Web port
+EXPOSE 8080
+
+>>>>>>> 607ae1ec4fd6ee8c71c4b48b357622be678898b4
 
 # Default to bash
 CMD ["/bin/bash"]
